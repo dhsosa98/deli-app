@@ -18,14 +18,40 @@ class NodeMailerTransport implements EmailTransport {
             pass: process.env.EMAIL_PASSWORD,
         },
     });
-    const response = await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: emailOptions.to,
-        subject: emailOptions.subject,
-        html: emailOptions.html,
-        attachments: emailOptions.attachment,
+
+    await new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+          if (error) {
+              console.log(error);
+              reject(error);
+          } else {
+              console.log("Server is ready to take our messages");
+              resolve(success);
+          }
+      });
+  });
+
+  const mailData = {
+    from: process.env.EMAIL_USER,
+    to: emailOptions.to,
+    subject: emailOptions.subject,
+    html: emailOptions.html,
+    attachments: emailOptions.attachment,
+  };
+
+  await new Promise((resolve, reject) => {
+    // send mail
+    transporter.sendMail(mailData, (err, info) => {
+        if (err) {
+            console.error(err);
+            reject(err);
+        } else {
+            console.log(info);
+            resolve(info);
+        }
     });
-    console.log(response);
+  });      
   }
 }
 

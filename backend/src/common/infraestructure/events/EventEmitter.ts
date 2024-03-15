@@ -1,4 +1,4 @@
-import EventEmitterInterface from "@/common/infraestructure/events/EventEmitter.interface";
+import EventEmitterInterface from "./EventEmitter.interface";
 import { injectable } from "inversify";
 import { EventEmitter as NodeEventEmitter } from "stream";
 

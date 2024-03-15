@@ -1,5 +1,5 @@
-import Country from "@/countries/entities/country";
-import User from "@/users/entitities/user";
+import Country from "../../../countries/entities/country";
+import User from "../../../users/entitities/user";
 import { DataSource, DataSourceOptions } from "typeorm";
 import dotenv from "dotenv";
 dotenv.config();

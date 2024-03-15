@@ -1,10 +1,10 @@
-import Types from "@/common/dependency-injection/types";
-import { AuthPassport } from "@/common/infraestructure/passports/AuthPassport";
-import EventEmitter from "@/common/infraestructure/events/EventEmitter.interface";
-import UserRepository from "@/users/repositories/user.repository";
+import Types from "../../common/dependency-injection/types";
+import { AuthPassport } from "../../common/infraestructure/passports/AuthPassport";
+import EventEmitter from "../../common/infraestructure/events/EventEmitter.interface";
+import UserRepository from "../../users/repositories/user.repository";
 import { inject, injectable } from "inversify";
-import { EmailOptions, EmailTransport } from "@/common/infraestructure/transports/EmailTransport.interface";
-import { UserRegisteredEvent } from "@/common/infraestructure/events/UserRegisteredEvent";
+import { EmailOptions, EmailTransport } from "../../common/infraestructure/transports/EmailTransport.interface";
+import { UserRegisteredEvent } from "../../common/infraestructure/events/UserRegisteredEvent";
 import VerifyAccountEmailTemplate from "./verifyAccountEmailTemplate";
 
 

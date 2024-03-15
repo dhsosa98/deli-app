@@ -1,10 +1,10 @@
 import { inject, injectable } from "inversify";
 import { Request, Response } from 'express';
-import { AuthController as AuthControllerInterface } from "@/auth/controllers/auth.controller.interface";
-import Types from "@/common/dependency-injection/types";
-import VerifyAccountService from "@/auth/services/verifyAccount.service";
-import AuthService from "@/auth/services/auth.service";
-import { CreateUserRequest } from "@/users/dtos/CreateUser";
+import { AuthController as AuthControllerInterface } from "../../controllers/auth.controller.interface";
+import Types from "../../../common/dependency-injection/types";
+import VerifyAccountService from "../../services/verifyAccount.service";
+import AuthService from "../../services/auth.service";
+import { CreateUserRequest } from "../../../users/dtos/CreateUser";
 
 
 @injectable()

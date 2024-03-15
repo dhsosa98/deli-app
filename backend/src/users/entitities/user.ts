@@ -1,4 +1,3 @@
-import Country from "@/countries/entities/country";
 import { injectable } from "inversify";
 import { BaseEntity, Column, Entity, PrimaryColumn, PrimaryGeneratedColumn, OneToOne } from "typeorm";
 

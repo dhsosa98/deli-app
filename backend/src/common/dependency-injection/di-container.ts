@@ -1,28 +1,28 @@
 import { Container } from "inversify";
-import HelloRouter from "@/hello/routers/hello.router";
-import { RouterRegister } from "@/common/infraestructure/router/routerRegister";
+import HelloRouter from "../../hello/routers/hello.router";
+import { RouterRegister } from "../../common/infraestructure/router/routerRegister";
 import Types from "./types";
-import UserRouter from "@/users/routers/user.router";
-import UserController from "@/users/controllers/http/user.controller";
-import UserValidator from "@/users/validators/user.validator";
-import EventEmitter from "@/common/infraestructure/events/EventEmitter";
-import UsersRepository from "@/users/repositories/user.repository";
-import User from "@/users/entitities/user";
-import CountryController from "@/countries/controllers/http/country.controller";
-import Country from "@/countries/entities/country";
-import CountryRepository from "@/countries/repositories/country.repository";
-import CountryRouter from "@/countries/routers/country.router";
+import UserRouter from "../../users/routers/user.router";
+import UserController from "../../users/controllers/http/user.controller";
+import UserValidator from "../../users/validators/user.validator";
+import EventEmitter from "../../common/infraestructure/events/EventEmitter";
+import UsersRepository from "../../users/repositories/user.repository";
+import User from "../../users/entitities/user";
+import CountryController from "../../countries/controllers/http/country.controller";
+import Country from "../../countries/entities/country";
+import CountryRepository from "../../countries/repositories/country.repository";
+import CountryRouter from "../../countries/routers/country.router";
 import { AuthPassport } from "../infraestructure/passports/AuthPassport";
 import { JwtPassport } from "../infraestructure/passports/JwtPassport";
-import VerifyAccountService from "@/auth/services/verifyAccount.service";
+import VerifyAccountService from "../../auth/services/verifyAccount.service";
 import { EmailTransport } from "../infraestructure/transports/EmailTransport.interface";
-import VerifyAccountEmailTemplate from "@/auth/services/verifyAccountEmailTemplate";
-import AuthController from "@/auth/controllers/http/auth.controller";
-import AuthRouter from "@/auth/routers/auth.router";
+import VerifyAccountEmailTemplate from "../../auth/services/verifyAccountEmailTemplate";
+import AuthController from "../../auth/controllers/http/auth.controller";
+import AuthRouter from "../../auth/routers/auth.router";
 import NodeMailerTransport from "../infraestructure/transports/NodeMailerTransport";
 import dataSource from "../infraestructure/database/db";
 import MailgunEmailTransport from "../infraestructure/transports/MailgunEmailTransport";
-import AuthService from "@/auth/services/auth.service";
+import AuthService from "../../auth/services/auth.service";
 
 
 

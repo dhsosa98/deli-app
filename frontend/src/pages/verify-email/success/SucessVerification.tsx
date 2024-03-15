@@ -27,14 +27,14 @@ const SuccessVerification = () => {
     const {username} = user;
 
     return (
-        <div className="card">
+        <article className="card">
             <img src="/verified-symbol-icon.svg" alt="Verified Icon" />
             <h2>¡Bienvenido a la comunidad {username}!</h2>
             <h3>¡Tu cuenta ha sido verificada exitosamente!</h3>
             <p>¡Ahora puedes disfrutar de <span>Deli</span>!</p>
             <p>Seras redirigido a la página de inicio en <span className="seconds">{secondsForRedirect}</span> segundos.</p>
             <p>Si no eres redirigido automáticamente, haz clic <a href={"https://deli.com.br/pt-br/"}>aquí</a>.</p>
-        </div>
+        </article>
     )
 }
 

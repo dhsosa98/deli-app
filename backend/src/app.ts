@@ -1,6 +1,6 @@
-import Types from '@/common/dependency-injection/types';
-import { Server } from '@/server';
-import DIContainer from '@/common/dependency-injection/di-container';
+import Types from './common/dependency-injection/types';
+import { Server } from './server';
+import DIContainer from './common/dependency-injection/di-container';
 import dotenv from 'dotenv';
 dotenv.config();
 

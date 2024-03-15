@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { App } from '@/app';
-import { Server } from '@/server';
+import { App } from '../src/app';
+import { Server } from '../src/server';
 
 describe('App', () => {
     let app: App;

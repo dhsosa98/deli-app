@@ -23,7 +23,9 @@ SECRET_KEY= # Secret key for Auth token
 EMAIL_USER= # Email user for sending emails
 EMAIL_PASSWORD= # Email password for sending emails
 EMAIL_HOST= # Email host for sending emails
+EMAIL_SERVICE= # Email service for sending emails
 
+# Database
 DB_TYPE= # Database type | mysql, postgres, sqlite, etc
 DB_HOST= # Database host
 DB_PORT= # Database port
@@ -87,3 +89,18 @@ Note: Dont forget to set the environment variables in the .env files and run the
 ```bash
 docker exec -it deli-db psql -U root -d deli-db -f /docker-entrypoint-initdb.d/initDb.sql
 ```
+
+## Screenshots
+
+### Sign Up
+![alt text](./assets/image-1.png)
+
+### Verifying email
+![alt text](./assets/image.png)
+
+### Email Verified
+![alt text](./assets/image-2.png)
+
+## Live Demo
+[Live Demo](https://deli-app-one.vercel.app/)
+

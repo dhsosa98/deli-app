@@ -1,13 +1,12 @@
 import { inject, injectable } from "inversify";
 import { Request, Response } from 'express';
-import Types from "@/common/dependency-injection/types";
-import EventEmitter from "@/common/infraestructure/events/EventEmitter.interface";
-import UserRepository from "@/users/repositories/user.repository";
-import { CreateUserRequest } from "@/users/dtos/CreateUser";
-import { UserController as UserControllerInterface } from "@/users/controllers/user.controller.interface";
-import User from "@/users/entitities/user";
-import CountryRepository from "@/countries/repositories/country.repository";
-import { HttpError } from "http-errors";
+import Types from "../../../common/dependency-injection/types";
+import EventEmitter from "../../../common/infraestructure/events/EventEmitter.interface";
+import UserRepository from "../../repositories/user.repository";
+import { CreateUserRequest } from "../../dtos/CreateUser";
+import { UserController as UserControllerInterface } from "../user.controller.interface";
+import User from "../..//entitities/user";
+import CountryRepository from "../../../countries/repositories/country.repository";
 import bcript from 'bcryptjs';
 
 @injectable()

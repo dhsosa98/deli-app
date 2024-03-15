@@ -1,8 +1,8 @@
 import { inject, injectable } from "inversify";
 import { Request, Response } from 'express';
-import { CountryController as CountryControllerInterface } from "@/countries/controllers/country.controller.interface";
-import CountryRepository from "@/countries/repositories/country.repository";
-import Types from "@/common/dependency-injection/types";
+import { CountryController as CountryControllerInterface } from "../country.controller.interface";
+import CountryRepository from "../../repositories/country.repository";
+import Types from "../../../common/dependency-injection/types";
 
 
 @injectable()

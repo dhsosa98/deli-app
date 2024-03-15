@@ -1,5 +1,5 @@
-import Types from "@/common/dependency-injection/types";
-import { Router as RouterInterface } from "@/common/infraestructure/router/router.interface";
+import Types from "../../common/dependency-injection/types";
+import { Router as RouterInterface } from "../../common/infraestructure/router/router.interface";
 import { Router } from "express";
 import { inject, injectable } from "inversify";
 import { CountryController } from "../controllers/country.controller.interface";

@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
-import Country from "@/countries/entities/country";
-import dataSource from "@/common/infraestructure/database/db";
+import Country from "../entities/country";
+import dataSource from "../../common/infraestructure/database/db";
 
 
 @injectable()

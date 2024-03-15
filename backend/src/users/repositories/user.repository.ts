@@ -1,7 +1,6 @@
-import Types from "@/common/dependency-injection/types";
 import { inject, injectable } from "inversify";
 import User from "../entitities/user";
-import dataSource from "@/common/infraestructure/database/db";
+import dataSource from "../../common/infraestructure/database/db";
 import { FindOptionsWhere } from "typeorm";
 
 

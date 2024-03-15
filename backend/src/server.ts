@@ -4,8 +4,8 @@ import http from 'http';
 import cors from 'cors';
 import errorHandler from 'errorhandler';
 import { inject } from 'inversify';
-import { RouterRegister } from '@/common/infraestructure/router/routerRegister';
-import Types from '@/common/dependency-injection/types';
+import { RouterRegister } from './common/infraestructure/router/routerRegister';
+import Types from './common/dependency-injection/types';
 import path from 'path';
 
 export class Server {
