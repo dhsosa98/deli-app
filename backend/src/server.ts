@@ -6,6 +6,7 @@ import errorHandler from 'errorhandler';
 import { inject } from 'inversify';
 import { RouterRegister } from '@/common/infraestructure/router/routerRegister';
 import Types from '@/common/dependency-injection/types';
+import path from 'path';
 
 export class Server {
     private app: express.Application;
@@ -23,6 +24,10 @@ export class Server {
 			origin: process.env.CORS_ORIGIN,
 			credentials: true,
 		}));
+		const env = this.app.get('env') as string;
+		if (env == "production"){
+			this.app.use('/', express.static(path.join(__dirname, '../../frontend/dist')));
+		}
 		this.app = RouterRegister.registerRoutes(this.app);
     }
 
