@@ -5,7 +5,7 @@ import UserRepository from "@/users/repositories/user.repository";
 import { EventEmitter } from "stream";
 import { CreateUserRequest } from "@/users/dtos/CreateUser";
 import User from "@/users/entitities/user";
-import bcript from 'bcrypt';
+import bcript from 'bcryptjs';
 
 
 interface RegisterUserResponse {

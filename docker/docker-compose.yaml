@@ -9,20 +9,6 @@ services:
       target: development
     env_file:
     - ../backend/.env
-    environment:
-      - WAIT_HOSTS=db:5432
-      - DB_HOST=db
-      - DB_USERNAME=root
-      - DB_PASSWORD=12345678
-      - DB_DATABASE=deli-db
-      - DB_PORT=5432
-      - DB_TYPE=postgres
-      - PORT=8000
-      - EMAIL_HOST=${EMAIL_HOST}
-      - EMAIL_USER=${EMAIL_USER}
-      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
-      - SECRET_KEY=${SECRET_KEY}
-      - FRONTEND_URI=http://deli_front_dev:5173
     # Run a command against the development stage of the image
     container_name: deli_backend_dev
     image: dhsosa98/deli_backend_dev:latest
@@ -56,6 +42,7 @@ services:
       - backend
     volumes: 
       - db:/var/lib/postgresql/data
+      - ../backend/migrations/initDb.sql:/docker-entrypoint-initdb.d/initDb.sql/:ro
     mem_reservation: 256M
 
   ui: 
@@ -63,8 +50,8 @@ services:
       dockerfile: Dockerfile
       context: ../frontend
       target: front_development
-    environment:
-      - VITE_API_BASE_URL=http://deli_backend_dev:8000
+    env_file:
+    - ../frontend/.env
     # Run a command against the development stage of the image
     image: dhsosa98/deli_front_dev:latest
     container_name: deli_front_dev

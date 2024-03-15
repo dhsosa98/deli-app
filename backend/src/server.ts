@@ -24,10 +24,6 @@ export class Server {
 			origin: process.env.CORS_ORIGIN,
 			credentials: true,
 		}));
-		const env = this.app.get('env') as string;
-		if (env == "production"){
-			this.app.use('/', express.static(path.join(__dirname, '../../frontend/dist')));
-		}
 		this.app = RouterRegister.registerRoutes(this.app);
     }
 

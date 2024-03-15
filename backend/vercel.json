@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "github": {
+        "enabled": false
+    },
+    "builds": [
+        {
+            "src": "/dist/src/start.js",
+            "use": "@vercel/node",
+            "config": { "includeFiles": ["dist/**"] }
+          }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/dist/src/start.js"
+        }
+    ]
+}

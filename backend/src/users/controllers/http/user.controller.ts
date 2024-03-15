@@ -8,7 +8,7 @@ import { UserController as UserControllerInterface } from "@/users/controllers/u
 import User from "@/users/entitities/user";
 import CountryRepository from "@/countries/repositories/country.repository";
 import { HttpError } from "http-errors";
-import bcript from 'bcrypt';
+import bcript from 'bcryptjs';
 
 @injectable()
 class UserController implements UserControllerInterface {
