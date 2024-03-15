@@ -1,0 +1,86 @@
+# docker-compose.yml
+version: "3.7"
+services:
+  backend:
+    build:
+      dockerfile: Dockerfile
+      context: ../backend
+      # Only will build development stage from our dockerfile
+      target: development
+    env_file:
+    - ../backend/.env
+    environment:
+      - WAIT_HOSTS=db:5432
+      - DB_HOST=db
+      - DB_USERNAME=root
+      - DB_PASSWORD=12345678
+      - DB_DATABASE=deli-db
+      - DB_PORT=5432
+      - DB_TYPE=postgres
+      - PORT=8000
+      - EMAIL_HOST=${EMAIL_HOST}
+      - EMAIL_USER=${EMAIL_USER}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - SECRET_KEY=${SECRET_KEY}
+      - FRONTEND_URI=http://deli_front_dev:5173
+    # Run a command against the development stage of the image
+    container_name: deli_backend_dev
+    image: dhsosa98/deli_backend_dev:latest
+    command: sh -c "/wait && npm run dev"
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+    networks:
+      - backend
+      - frontend
+    stdin_open: true
+    tty: true
+    volumes:
+       - ../backend:/usr/src/app/:rw
+       - /usr/src/app/node_modules
+    mem_reservation: 512M
+
+
+  db:
+    image: postgres:13
+    restart: always
+    container_name: deli-db
+    ports:
+      - '5433:5432'
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 12345678
+      POSTGRES_DB: deli-db
+    networks:
+      - backend
+    volumes: 
+      - db:/var/lib/postgresql/data
+    mem_reservation: 256M
+
+  ui: 
+    build:
+      dockerfile: Dockerfile
+      context: ../frontend
+      target: front_development
+    environment:
+      - VITE_API_BASE_URL=http://deli_backend_dev:8000
+    # Run a command against the development stage of the image
+    image: dhsosa98/deli_front_dev:latest
+    container_name: deli_front_dev
+    command: npm run dev
+    networks:
+      - frontend
+    ports:
+      - 5173:5173
+    stdin_open: true
+    volumes:
+       - ../frontend:/usr/src/app/:rw
+       - /usr/src/app/node_modules
+
+volumes: 
+  db:
+    driver: local
+networks:
+  backend:
+  frontend:

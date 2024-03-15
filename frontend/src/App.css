@@ -1,0 +1,50 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.card {
+  box-sizing: border-box;
+  border-width: 1px;
+  border-color: rgb(225, 227, 234);
+  border-style: solid;
+  border-radius: 8px;
+  padding: 4.5rem;
+  color: #37394f;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  position: relative;
+}
+
+.card img {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5rem;
+  height: 5rem;
+}
+
+.card p span {
+  color: #ff5023;
+}
+
+.card p .email {
+  font-weight: 700;
+  color: #37394f;
+}
+
+.card p .seconds {
+  font-weight: 700;
+  color: #37394f;
+}
+
+h2 {
+  color: #ff5023;
+}
+
+.card p a {
+  color: #ff5023;
+  text-decoration: none;
+  font-weight: 700;
+}
