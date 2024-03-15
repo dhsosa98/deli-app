@@ -3,7 +3,7 @@
 
 ## Description
 
-This is a simple app that allows users to add, edit, and delete items from a deli menu. The app is built using React and Redux.
+Simple fullstack app for signup and verify accounts for the clients of Deli
 
 ## Installation
 
